@@ -12,7 +12,7 @@ export const Bar = styled.div`
     height: 55px;
     z-index: 10;
 
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 
@@ -99,7 +99,7 @@ export const BurgerMenuBG = styled.div`
     justify-content: center;
     top: 0px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     height: ${props => props.burgerMenuIsOpen ? '100%' : '0px'};

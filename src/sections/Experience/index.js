@@ -11,7 +11,7 @@ function Experience () {
       <SectionHeader>Work Experience</SectionHeader>
         <div style={{margin: "20px 0"}}>
           {workExperiences.map( (workExperience, index) => (
-            <div style={{display: 'flex'}}>
+            <div style={{display: 'flex'}} key={`${index}-${workExperience.companyName}`}>
               <DateSection>
                 {workExperience.startDate} - {workExperience.endDate}
                 <Dot />

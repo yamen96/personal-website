@@ -15,6 +15,10 @@ export const StyledCard = styled.div`
   h2 {
     color: #555454;
     font-size: 18px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
 
@@ -68,7 +72,7 @@ export const DropdownContainer = styled.div`
   transition: all .2s ease-out;
   
   &:hover {
-    transform: translate(0, 5px);
+    transform: translate(0, ${props => props.isExpanded ? "-5px" : "5px"});
   }
 
   img {

@@ -2,6 +2,7 @@ export const workExperiences = [
   { 
     positionTitle: "Software Development Engineer",
     companyName: "Amazon Web Services",
+    companyLink: "https://aws.amazon.com/",
     companyLogoPath: "company-logos/Amazon Web Services.png",
     experience: [
       "Developed a major feature for a SaaS product enabling customer data encryption with their own managed keys.",
@@ -17,6 +18,7 @@ export const workExperiences = [
   { 
     positionTitle: "Software Engineer",
     companyName: "TELUS",
+    companyLink: "https://www.telus.com/en",
     companyLogoPath: "company-logos/TELUS.png",
     experience: [
       "Full-stack engineer in Core Network Engineering team responsible for designing and building front-end applications and enterprise REST APIs for Cellular Network Automation",
@@ -33,6 +35,7 @@ export const workExperiences = [
   { 
     positionTitle: "Hardware Engineer Intern",
     companyName: "Cadex Electronics",
+    companyLink: "https://www.cadex.com/",
     companyLogoPath: "company-logos/Cadex Electronics.png",
     experience: [
       "Redesigned a DC Protection Board with 20x cost reduction whilst maintaining performance ",
@@ -47,6 +50,7 @@ export const workExperiences = [
   { 
     positionTitle: "Media Designer Intern",
     companyName: "University of British Columbia, Faculty of Medicine",
+    companyLink: "https://www.med.ubc.ca/",
     companyLogoPath: "company-logos/UBC.png",
     experience: [
       "Worked directly with the project lead to program/debug 15+ learning modules to be published online for Medicine students",
@@ -62,6 +66,7 @@ export const workExperiences = [
   { 
     positionTitle: "Biomedical Engineer Intern",
     companyName: "Central Circle Company",
+    companyLink: "https://www.centralcircleco.com/",
     companyLogoPath: "company-logos/CCC.png",
     experience: [
       "Acquired exposure to a variety of medical equipment and learned how to assemble, fix and test them for proper functionality.",
@@ -77,6 +82,7 @@ export const workExperiences = [
   { 
     positionTitle: "Assistant Coach",
     companyName: "British Academy of Sport",
+    companyLink: "https://www.bsk.edu.kw/",
     companyLogoPath: "company-logos/BSK.png",
     experience: [
       "Taught groups of grade 1-5 children at school swimming, karate and gymnastics while ensuring they perform the different activities correctly, preventing any conflicts or safety accidents from occurring",

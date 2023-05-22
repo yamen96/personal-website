@@ -6,14 +6,14 @@ function AboutMe () {
     return (
         <Section id={"about me"}>
             <div className='MyImg'>
-                <img src={"me.png"} height={150}/>
+                <img src={"me.png"} height={150} alt={"picture of me"}/>
             </div>
             <p className="Intro">
                 Hi, my name is
             </p>
             <h1 className="Header">YAMEN TAHA</h1>
             <p className="AboutMeBlurb">
-                I'm a passionate <b>software engineer</b> with a strong focus on creating user-friendly applications 
+                I'm a <b>software engineer</b> with a strong focus on creating user-friendly applications 
                 that solve real-world problems. I'm experienced in front-end design, back-end development, 
                 and scalable system architecture. With experience in multiple cloud providers, I'm well-equipped 
                 to tackle any project and I'm committed to delivering high-quality software that delights users and 

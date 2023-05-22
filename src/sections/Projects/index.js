@@ -10,7 +10,7 @@ function Projects () {
     <SectionHeader>Projects</SectionHeader>
     <ProjectGrid>
       {projectsList.map(project => (
-          <ProjectCard {...project}/>
+          <ProjectCard key={project.projectTitle} {...project}/>
         ))}
       </ProjectGrid>
   </SiteSection>

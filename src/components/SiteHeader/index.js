@@ -15,7 +15,7 @@ function SiteHeader () {
 
     useEffect(() => {
         //prevent scrolling when burger menu is open
-        document.body.style.overflow = burgerMenuIsOpen ? "hidden" : "scroll";
+        document.body.style.overflow = burgerMenuIsOpen ? "hidden" : "auto";
     }, [burgerMenuIsOpen]);
 
     useEffect(() => {
@@ -31,7 +31,7 @@ function SiteHeader () {
                     <SiteLogo />
                     <NavList>
                         {navLinks.map(navLink => 
-                        (<a href={`/#${navLink.toLowerCase()}`}>
+                        (<a href={`/#${navLink.toLowerCase()}`} key={navLink} >
                             <ListItem key={navLink}>{navLink}</ListItem>
                         </a>))}
                     </NavList>

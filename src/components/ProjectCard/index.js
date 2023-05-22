@@ -7,7 +7,7 @@ function ProjectCard ({projectTitle, projectDescription, githubLink, skills}) {
       <h1>
         {projectTitle}
         {githubLink && <a href={githubLink}>
-          <img src={"company-logos/github-142-svgrepo-com.svg"} height={20}/>
+          <img src={"company-logos/github-142-svgrepo-com.svg"} height={20} alt={"github link"}/>
         </a>}
 
       </h1>
