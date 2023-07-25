@@ -6,7 +6,7 @@ import { Animator } from '../../components/helpers/animationHelper';
 
 function ContactMe () {
   return <SiteSection id="contact me">
-    <ContactMeWrapper {...new Animator().shouldAnimateOnView().withDuration(1).getProps()}>
+    <ContactMeWrapper {...new Animator().shouldAnimateOnView().withDuration(1).withDirection(-2).getProps()}>
       <h1>CONTACT ME</h1>
       <ContactMeContent>
         {contactMe.map((contact, index) => (

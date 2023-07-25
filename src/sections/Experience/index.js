@@ -11,18 +11,19 @@ function Experience () {
   return (
     <SiteSection id={"experience"}>
       <SectionHeader>Work Experience</SectionHeader>
-        <motion.div style={{margin: "20px 0"}} {...new Animator().shouldAnimateOnView().withDelay(0.5).withDuration(0.2).getProps()}>
-
+        <div style={{margin: "20px 0"}}>
           {workExperiences.map( (workExperience, index) => (
-            <div style={{display: 'flex'}} key={`${index}-${workExperience.companyName}`}>
+            <motion.div style={{display: 'flex'}} 
+                        key={`${index}-${workExperience.companyName}`}
+                        {...new Animator().shouldAnimateOnView().withDelay(0.3 + index*0.2).withDirection(-2).withDuration(0.5).getProps()}>
               <DateSection>
                 {workExperience.startDate} - {workExperience.endDate}
                 <Dot />
               </DateSection>
               <ExperienceCard {...workExperience} isInitiallyOpen={index === 0}/>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
     </SiteSection>
   )
 }
