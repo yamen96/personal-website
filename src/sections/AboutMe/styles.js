@@ -19,6 +19,13 @@ export const Section = styled.div`
         height: calc(100% + 75px);
     }
 
+    .MyImg {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
     .Intro {
         margin: 10px;
         font-size: 20px;
@@ -50,10 +57,4 @@ export const Section = styled.div`
         justify-content: center;
     }
 
-    .MyImg {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
 `;

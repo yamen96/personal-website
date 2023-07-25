@@ -1,19 +1,20 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const ContactMeWrapper = styled.div`
+export const ContactMeWrapper = motion(styled.div`
   border: 2.5px solid #333333;
   padding: 30px;
   margin: 30px;
 
   h1 {
     text-transform: uppercase;
-    font-size: 45px;
+    font-size: clamp(35px, 6vw, 45px);
     margin-top: -70px;
     background-color: var(--main-bg-color);
     padding: 10px;
     max-width: 290px;
   }
-`
+`);
 
 export const ContactMeContent = styled.div`
   display: flex;

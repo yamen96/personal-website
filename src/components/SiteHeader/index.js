@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Bar, LeftDiv, NavList, ListItem, BurgerIconWrapper, BurgerMenuBG } from './styles'
+import { Bar, LeftDiv, NavList, ListItem, BurgerIconWrapper, BurgerMenuBG } from './styles';
+import { Animator } from '../helpers/animationHelper';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import SiteLogo from '../SiteLogo';
 
@@ -26,13 +27,15 @@ function SiteHeader () {
 
     return (
         <>
-            <Bar>
+            <Bar {...new Animator().withDirection(-10).withDelay(1).withDuration(1).getProps()}>
                 <LeftDiv>
-                    <SiteLogo />
+                    <SiteLogo/>
                     <NavList>
-                        {navLinks.map(navLink => 
+                        {navLinks.map((navLink, index) => 
                         (<a href={`/#${navLink.toLowerCase()}`} key={navLink} >
-                            <ListItem key={navLink}>{navLink}</ListItem>
+                            <ListItem key={navLink} {...new Animator().withDirection(-10).withDelay(1.2 + index*0.2).withDuration(0.7).getProps()}>
+                                {navLink}
+                            </ListItem>
                         </a>))}
                     </NavList>
                 </LeftDiv>
@@ -44,8 +47,9 @@ function SiteHeader () {
             </Bar>
             <BurgerMenuBG burgerMenuIsOpen={burgerMenuIsOpen}>
                 <ul>
-                    {navLinks.map(navLink => (<li key={navLink} onClick={handleClick}>
-                            <a href={`/#${navLink.toLowerCase()}`}>
+                    {navLinks.map((navLink) => (
+                        <li key={navLink} onClick={handleClick}>
+                            <a href={`/#${navLink.toLowerCase()}`} >
                                 {navLink}
                             </a>
                         </li>))}

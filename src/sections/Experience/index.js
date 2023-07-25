@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from "framer-motion";
+import { Animator } from '../../components/helpers/animationHelper';
 import  SectionHeader  from '../../components/SectionHeader';
 import ExperienceCard from '../../components/ExperienceCard';
 import { SiteSection } from '../../components/SiteSection';
@@ -9,7 +11,8 @@ function Experience () {
   return (
     <SiteSection id={"experience"}>
       <SectionHeader>Work Experience</SectionHeader>
-        <div style={{margin: "20px 0"}}>
+        <motion.div style={{margin: "20px 0"}} {...new Animator().shouldAnimateOnView().withDelay(0.5).withDuration(0.2).getProps()}>
+
           {workExperiences.map( (workExperience, index) => (
             <div style={{display: 'flex'}} key={`${index}-${workExperience.companyName}`}>
               <DateSection>
@@ -19,8 +22,7 @@ function Experience () {
               <ExperienceCard {...workExperience} isInitiallyOpen={index === 0}/>
             </div>
           ))}
-        </div>
-
+        </motion.div>
     </SiteSection>
   )
 }

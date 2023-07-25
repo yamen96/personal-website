@@ -9,8 +9,8 @@ function Projects () {
   return <SiteSection id={"projects"}>
     <SectionHeader>Projects</SectionHeader>
     <ProjectGrid>
-      {projectsList.map(project => (
-          <ProjectCard key={project.projectTitle} {...project}/>
+      {projectsList.map((project, index) => (
+          <ProjectCard index={index} key={project.projectTitle} {...project}/>
         ))}
       </ProjectGrid>
   </SiteSection>

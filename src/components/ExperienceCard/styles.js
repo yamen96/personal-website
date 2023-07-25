@@ -43,7 +43,7 @@ export const StyledCardContent = styled.div`
     list-style-type: square;
   }
   max-height: ${props => props.isExpanded ? "500px" : "0px"};
-  transition: all ease-out 0.2s;
+  transition: all ease-out 0.5s;
 
   overflow: hidden;
   padding:  ${props => props.isExpanded ? "15px" : "0px"} 30px;

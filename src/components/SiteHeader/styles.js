@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from "framer-motion";
 
-export const Bar = styled.div`
+export const Bar = motion(styled.div`
     display: flex;
     background: #FFFFFF;
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.05);
@@ -24,7 +25,7 @@ export const Bar = styled.div`
         padding: 2px 8px 2px 8px;
         border: 2.5px solid #333333;
     }
-`;
+`);
 
 export const LeftDiv = styled.div`
     display: flex;
@@ -42,7 +43,7 @@ export const NavList = styled.ul`
     }
 `;
 
-export const ListItem = styled.li`
+export const ListItem = motion(styled.li`
     margin: 0px 12px 0px 12px;
     padding: 19px 8px;
     font-size: 16px;
@@ -52,7 +53,7 @@ export const ListItem = styled.li`
         background-color: #F1F1F1; 
         font-weight: 500   
     }
-`;
+`);
 
 export const BurgerIconWrapper = styled.div`
   width: 75px;

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import { Animator } from '../helpers/animationHelper';
 import styled from 'styled-components'
 
 const StyledHeading = styled.h1`
     text-transform: uppercase;
-    font-size: 45px;
+    font-size: clamp(40px, 6vw, 45px);
 `
 
 const HeadingUnderline = styled.div`
@@ -43,13 +45,13 @@ function SectionHeader (props) {
     }, []);
 
     return (
-        <>
+        <motion.div {...new Animator().shouldAnimateOnView().withDuration(1).getProps()}>
             <StyledHeading>{props.children}</StyledHeading>
             <HeadingUnderline>
                 <StyledLine/>
                 <SecondStyledLine width={lineWidth}/>
             </HeadingUnderline>
-        </>)
+        </motion.div>)
 }
 
 export default SectionHeader;

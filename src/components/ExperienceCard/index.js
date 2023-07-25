@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { StyledCard, StyledCardHeader, StyledCardContent, 
         DropdownContainer, StyledDateSection, StyledSkillsSection } from './styles';
+import useIsVisible from '../../hooks/useIsVisible';
 
 function ExperienceCard ({positionTitle, companyName, companyLink, companyLogoPath, experience, startDate, endDate, skills, isInitiallyOpen}) {
   const [ isExpanded, setIsExpanded ] = useState(isInitiallyOpen);
+  const [ interactedWith, setInteractedWith ] = useState(false);
+  const cardRef = useRef(null);
+  const isVisible = useIsVisible(cardRef);
 
   const handleOnClick = e => {
     setIsExpanded(!isExpanded);
+    setInteractedWith(true);
   }
 
-  return <StyledCard>
-    <StyledCardHeader onClick={handleOnClick} isExpanded={isExpanded}>
+  useEffect(() => {
+    if (isVisible && !interactedWith) {
+      setIsExpanded(true);
+    }
+  }, [isVisible]);
+
+  return <StyledCard ref={cardRef}>
+    <StyledCardHeader onClick={handleOnClick} isExpanded={isExpanded} >
       <div style={{display: 'flex', alignItems: 'center'}}>
         <img src={companyLogoPath} height={45} alt={`${companyName} logo`}/>
         <div style={{paddingLeft: '20px'}}>

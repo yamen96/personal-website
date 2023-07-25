@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { motion } from "framer-motion";
 
-export const StyledCard = styled.div`
+export const StyledCard = motion(styled.div`
   background: white;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -34,7 +35,7 @@ export const StyledCard = styled.div`
     font-size: 17px;
     font-weight: 300;
   }
-`
+`);
 
 export const StyledSkillsSection = styled.div`
   font-size: 13px;
