@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Animator } from '../../components/helpers/animationHelper';
 import { StyledCard, StyledCardHeader, StyledCardContent, 
         DropdownContainer, StyledDateSection, StyledSkillsSection } from './styles';
 
@@ -9,31 +10,31 @@ function ExperienceCard ({positionTitle, companyName, companyLink, companyLogoPa
     setIsExpanded(!isExpanded);
   }
 
-  return <StyledCard>
-    <StyledCardHeader onClick={handleOnClick} isExpanded={isExpanded} >
-      <div style={{display: 'flex', alignItems: 'center'}}>
-        <img src={companyLogoPath} height={45} alt={`${companyName} logo`}/>
-        <div style={{paddingLeft: '20px'}}>
-          <h1>{positionTitle}</h1>
-          <a href={companyLink} target="_blank"><h2>@ {companyName}</h2></a>
+  return <StyledCard {...new Animator().shouldAnimateOnView().withDelay(0.2).withDirection(-2).withDuration(0.5).getProps()}>
+      <StyledCardHeader onClick={handleOnClick} isExpanded={isExpanded} >
+        <div style={{display: 'flex', alignItems: 'center'}}>
+          <img src={companyLogoPath} height={45} alt={`${companyName} logo`}/>
+          <div style={{paddingLeft: '20px'}}>
+            <h1>{positionTitle}</h1>
+            <a href={companyLink} target="_blank"><h2>@ {companyName}</h2></a>
+          </div>
         </div>
-      </div>
-      <DropdownContainer isExpanded={isExpanded}>
-        <img src={"drop-down.png"} width={20} alt={"dropdown arrow"}/>
-      </DropdownContainer>
-    </StyledCardHeader>
-    <StyledCardContent isExpanded={isExpanded}>
-      <StyledDateSection>
-        ({ startDate } - { endDate })
-      </StyledDateSection>
-      <ul>
-        {experience.map((exp) => (<li key={`${exp}`}>{exp}</li>))}
-      </ul>
-      <StyledSkillsSection>
-        {skills.map((skill, index) => (`${index === 0 ? '' : ' • '}${skill}`))}
-      </StyledSkillsSection>
-    </StyledCardContent>
-  </StyledCard>
+        <DropdownContainer isExpanded={isExpanded}>
+          <img src={"drop-down.png"} width={20} alt={"dropdown arrow"}/>
+        </DropdownContainer>
+      </StyledCardHeader>
+      <StyledCardContent isExpanded={isExpanded}>
+        <StyledDateSection>
+          ({ startDate } - { endDate })
+        </StyledDateSection>
+        <ul>
+          {experience.map((exp) => (<li key={`${exp}`}>{exp}</li>))}
+        </ul>
+        <StyledSkillsSection>
+          {skills.map((skill, index) => (`${index === 0 ? '' : ' • '}${skill}`))}
+        </StyledSkillsSection>
+      </StyledCardContent>
+    </StyledCard>
 }
 
 export default ExperienceCard;

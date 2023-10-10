@@ -1,5 +1,11 @@
 export const projectsList = [
   {
+    projectTitle: "Seal's Journey Game",
+    projectDescription: "A 3D platforming video game where you play as a seal, collect fish as fast as possible in each level while you try and avoid predators. The game was built using the Unity game engine from scratch and is downloadable from Itch.io",
+    externalLink: "https://yamgames.itch.io/seals-journey",
+    skills: ["C#", "Unity", "Blender"]
+  },
+  {
     projectTitle: "Personal Website",
     projectDescription: "My personal website that includes my work experience, personal projects I've worked on and ways to contact me.",
     githubLink: "https://github.com/yamen96/personal-website",

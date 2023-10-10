@@ -5,8 +5,6 @@ import { Animator } from '../../components/helpers/animationHelper';
 import  Button  from '../../components/Button';
 
 function AboutMe () {
-
-
     return (
         <Section id={"about me"}>
             <motion.div {...new Animator().withDelay(1.5).getProps()} className='MyImg'>

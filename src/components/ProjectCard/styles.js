@@ -21,6 +21,7 @@ export const StyledCard = motion(styled.div`
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     a {
       transition: all .2s ease-out;
     

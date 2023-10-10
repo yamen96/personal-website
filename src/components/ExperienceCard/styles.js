@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { motion } from "framer-motion";
 
-export const StyledCard = styled.div`
+export const StyledCard = motion(styled.div`
   background: white;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   margin: 15px 0;
@@ -20,7 +21,7 @@ export const StyledCard = styled.div`
       text-decoration: underline;
     }
   }
-`
+`);
 
 export const StyledCardHeader = styled.div`
   padding: 15px;
