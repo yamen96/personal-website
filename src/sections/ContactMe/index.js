@@ -10,7 +10,7 @@ function ContactMe () {
       <h1>CONTACT ME</h1>
       <ContactMeContent>
         {contactMe.map((contact, index) => (
-          <a href={contact.link} target="_blank">
+          <a href={contact.link} target="_blank" key={index}>
             <img src={contact.imgSrc} height={contact.height} alt={contact.alt}/>
           </a>
         ))}

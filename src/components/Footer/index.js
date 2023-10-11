@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import SiteLogo from "../SiteLogo";
 
 const StyledDiv = styled.div`
-  background: #333333;
+
+  background: ${({ theme }) => theme.footer};
   color: white;
   display: flex;
   justify-content: center;

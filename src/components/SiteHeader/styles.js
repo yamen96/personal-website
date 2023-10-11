@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 export const Bar = motion(styled.div`
     display: flex;
-    background: #FFFFFF;
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.05);
     justify-content: space-between;
     align-items: center;
@@ -12,8 +11,9 @@ export const Bar = motion(styled.div`
     width: 100%;
     height: 55px;
     z-index: 10;
+    color: ${ ({theme}) => theme.mainText};
 
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: ${ ({theme}) => theme.headerBG};
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 
@@ -34,7 +34,7 @@ export const LeftDiv = styled.div`
 `
 
 export const NavList = styled.ul`
-    align-items: baseline ; 
+    align-items: baseline; 
     list-style-type: none;
     display: flex;
     padding-left: 25px;
@@ -43,14 +43,20 @@ export const NavList = styled.ul`
     }
 `;
 
+export const ThemeWrapper = styled.ul`
+    @media (max-width: 773px) {
+        display: none;
+    }
+`;
+
 export const ListItem = motion(styled.li`
     margin: 0px 12px 0px 12px;
-    padding: 19px 8px;
+    padding: 18px 8px;
     font-size: 16px;
     :hover {
         cursor: pointer;
         transition: font-weight 0.3s ease;
-        background-color: #F1F1F1; 
+        background-color:  ${ ({theme}) => theme.hover}; 
         font-weight: 500   
     }
 `);
@@ -65,7 +71,7 @@ export const BurgerIconWrapper = styled.div`
   :hover {
     cursor: pointer;
     transition: background-color 0.5s ease;
-    background-color: #F1F1F1;    
+    background-color: ${ ({theme}) => theme.hover};    
   }
   @media (min-width: 773px) {
     display: none;
@@ -74,7 +80,7 @@ export const BurgerIconWrapper = styled.div`
   .lineTop, .lineMiddle, .lineBottom {
     width: 25px;
     height: 2px;
-    background: #333333;
+    background: ${ ({theme}) => theme.mainText};
     margin: 3px;
     transition:transform 0.2s ease;
   }
@@ -100,7 +106,7 @@ export const BurgerMenuBG = styled.div`
     justify-content: center;
     top: 0px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: ${ ({theme}) => theme.headerBG};
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     height: ${props => props.burgerMenuIsOpen ? '100%' : '0px'};

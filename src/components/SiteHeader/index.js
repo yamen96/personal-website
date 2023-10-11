@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Bar, LeftDiv, NavList, ListItem, BurgerIconWrapper, BurgerMenuBG } from './styles';
+import { Bar, LeftDiv, NavList, ListItem, BurgerIconWrapper, BurgerMenuBG, ThemeWrapper } from './styles';
 import { Animator } from '../helpers/animationHelper';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import SiteLogo from '../SiteLogo';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
-function SiteHeader () {
+function SiteHeader ({theme, themeToggler}) {
     const navLinks = ["ABOUT ME", "EXPERIENCE", "PROJECTS", "CONTACT ME"];
     const [burgerMenuIsOpen, setBurgerMenuIsOpen] = useState(false);
     const { width } = useWindowDimensions();
@@ -27,7 +28,7 @@ function SiteHeader () {
 
     return (
         <>
-            <Bar {...new Animator().withDirection(-10).withDelay(1).withDuration(1).getProps()}>
+            <Bar>
                 <LeftDiv>
                     <SiteLogo/>
                     <NavList>
@@ -44,6 +45,7 @@ function SiteHeader () {
                     <span className={"lineMiddle"} />
                     <span className={"lineBottom"} />
                 </BurgerIconWrapper>
+                <ThemeWrapper><ThemeToggle onClick={themeToggler} theme={theme}/></ThemeWrapper>
             </Bar>
             <BurgerMenuBG burgerMenuIsOpen={burgerMenuIsOpen}>
                 <ul>
@@ -53,7 +55,9 @@ function SiteHeader () {
                                 {navLink}
                             </a>
                         </li>))}
+                        <ThemeToggle onClick={themeToggler} theme={theme}/>
                 </ul>
+
             </BurgerMenuBG>
         </>
     )

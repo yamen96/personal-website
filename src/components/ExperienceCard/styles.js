@@ -2,19 +2,19 @@ import styled from 'styled-components';
 import { motion } from "framer-motion";
 
 export const StyledCard = motion(styled.div`
-  background: white;
+  background: ${({ theme }) => theme.secondaryBG};
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   margin: 15px 0;
   width: 100%;
 
   h1 {
-    color: #333333;
+    color: ${({ theme }) => theme.mainText};
     font-size: 20px;
     font-weight: 500;
   }
 
   h2 {
-    color: #555454;
+    color:  ${({ theme }) => theme.secondaryText};
     font-size: 18px;
     text-decoration: none;
     &:hover {
@@ -55,7 +55,7 @@ export const StyledDateSection = styled.div`
   font-size: 13px;
   font-weight: 500;
 
-  color: #555454;
+  color: ${({ theme }) => theme.secondaryText};
   @media (min-width: 768px) {
     display: none;
   }
@@ -63,7 +63,7 @@ export const StyledDateSection = styled.div`
 
 export const StyledSkillsSection = styled.div`
   font-size: 15px;
-  color: #555454;
+  color: ${({ theme }) => theme.secondaryText};
   font-weight: 500;
 `
 

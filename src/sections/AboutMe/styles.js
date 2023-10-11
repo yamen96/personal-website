@@ -9,6 +9,8 @@ export const Section = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: ${({ theme }) => theme.mainText};
+
     @media (max-height: 600px) {
         margin-top: 55px;
         height: calc(100% + 75px);
@@ -37,7 +39,7 @@ export const Section = styled.div`
         font-size: 60px;
         font-size: clamp(50px, 6vw, 70px);
         padding: 2px 8px 2px 8px;
-        border: 4.5px solid #333333;
+        border: 4.5px solid ${({ theme }) => theme.mainText};
         display: flex;
         justify-content: center;
     }

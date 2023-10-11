@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components'
 
 const CustomButton = styled.a`
-    background-color: #333333;
+    background-color: ${({ theme }) => theme.mainText};
     border: 3px solid transparent; 
-    color: white;
+    color: ${({ theme }) => theme.mainBG};
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -15,8 +15,8 @@ const CustomButton = styled.a`
 
     :hover {
         transition: background-color 0.2s ease;
-        background-color: white; 
-        color: #333333;  
+        background-color: ${({ theme }) => theme.mainBG};
+        color: ${({ theme }) => theme.mainText}; 
         border: 3px solid; 
     }
 `

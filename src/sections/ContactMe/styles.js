@@ -2,15 +2,16 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const ContactMeWrapper = motion(styled.div`
-  border: 2.5px solid #333333;
+  border: 2.5px solid ${({ theme }) => theme.mainText};
   padding: 30px;
   margin: 30px;
+  color: ${({ theme }) => theme.mainText};
 
   h1 {
     text-transform: uppercase;
     font-size: clamp(35px, 6vw, 45px);
     margin-top: -70px;
-    background-color: var(--main-bg-color);
+    background-color:  ${({ theme }) => theme.mainBG};
     padding: 10px;
     max-width: 290px;
   }

@@ -21,7 +21,7 @@ const StyledLine = styled.hr`
 
 const SecondStyledLine = styled.hr`
     width: 30%;
-    background: black;
+    background: ${({ theme }) => theme.secondaryText};
     border: none;
     height: 3px;
     margin: -3px;
