@@ -14,6 +14,7 @@ export const StyledCard = motion(styled.div`
   &:hover {
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
   }
+
   h1 {
     color: ${({ theme }) => theme.mainText};
     font-size: 20px;
@@ -32,15 +33,24 @@ export const StyledCard = motion(styled.div`
   }
 
   h2 {
-    color: ${({ theme }) => theme.secondaryText};
+    color: ${({ theme }) => theme.mainText};
     font-size: 17px;
     font-weight: 300;
+  }
+
+  img {
+    ${({ theme }) => {
+      if (theme.name === 'dark') {
+        return `-webkit-filter: invert(1);
+        filter: invert(1);`
+      }
+    }};
   }
 `);
 
 export const StyledSkillsSection = styled.div`
   font-size: 13px;
-  color: ${({ theme }) => theme.mainText};
+  color: ${({ theme }) => theme.secondaryText};
   font-weight: 500;
   margin-top: 20px;
 `

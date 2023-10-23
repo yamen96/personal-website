@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Bar, LeftDiv, NavList, ListItem, BurgerIconWrapper, BurgerMenuBG, ThemeWrapper } from './styles';
+import { Bar, LeftDiv, RightDiv, NavList, ListItem, BurgerIconWrapper, BurgerMenuBG, ThemeIconWrapper } from './styles';
 import { Animator } from '../helpers/animationHelper';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import SiteLogo from '../SiteLogo';
-import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 function SiteHeader ({theme, themeToggler}) {
     const navLinks = ["ABOUT ME", "EXPERIENCE", "PROJECTS", "CONTACT ME"];
@@ -40,12 +39,16 @@ function SiteHeader ({theme, themeToggler}) {
                         </a>))}
                     </NavList>
                 </LeftDiv>
-                <BurgerIconWrapper onClick={handleClick} burgerMenuIsOpen={burgerMenuIsOpen}>
-                    <span className={"lineTop"} />
-                    <span className={"lineMiddle"} />
-                    <span className={"lineBottom"} />
-                </BurgerIconWrapper>
-                <ThemeWrapper><ThemeToggle onClick={themeToggler} theme={theme}/></ThemeWrapper>
+                <RightDiv>
+                    <ThemeIconWrapper onClick={themeToggler}>
+                        {theme == 'dark' ? <img src={'sun-icon.svg'} /> : <img src={'moon-icon.svg'} />}
+                    </ThemeIconWrapper>
+                    <BurgerIconWrapper onClick={handleClick} burgerMenuIsOpen={burgerMenuIsOpen}>
+                        <span className={"lineTop"} />
+                        <span className={"lineMiddle"} />
+                        <span className={"lineBottom"} />
+                    </BurgerIconWrapper>
+                </RightDiv>
             </Bar>
             <BurgerMenuBG burgerMenuIsOpen={burgerMenuIsOpen}>
                 <ul>
@@ -55,7 +58,6 @@ function SiteHeader ({theme, themeToggler}) {
                                 {navLink}
                             </a>
                         </li>))}
-                        <ThemeToggle onClick={themeToggler} theme={theme}/>
                 </ul>
 
             </BurgerMenuBG>

@@ -33,17 +33,17 @@ export const LeftDiv = styled.div`
     align-items: center;
 `
 
+export const RightDiv = styled.div`
+    display: flex;
+    height: 100%;
+    align-items: center;
+`
+
 export const NavList = styled.ul`
     align-items: baseline; 
     list-style-type: none;
     display: flex;
     padding-left: 25px;
-    @media (max-width: 773px) {
-        display: none;
-    }
-`;
-
-export const ThemeWrapper = styled.ul`
     @media (max-width: 773px) {
         display: none;
     }
@@ -60,6 +60,20 @@ export const ListItem = motion(styled.li`
         font-weight: 500   
     }
 `);
+
+export const ThemeIconWrapper = styled.div`
+  width: 75px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  :hover {
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    background-color: ${ ({theme}) => theme.hover};    
+  }
+`
 
 export const BurgerIconWrapper = styled.div`
   width: 75px;

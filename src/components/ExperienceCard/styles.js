@@ -29,7 +29,7 @@ export const StyledCardHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  border-bottom: 2px #cccccc ${props => props.isExpanded ? "solid" : "transparent"}; 
+  border-bottom: 2px  ${({ theme }) => theme.divider} ${props => props.isExpanded ? "solid" : "transparent"};
 `
 
 export const StyledCardContent = styled.div`
@@ -78,5 +78,11 @@ export const DropdownContainer = styled.div`
 
   img {
     transform: scaleY(${props => props.isExpanded ? "-1" : "1"});
+    ${({ theme }) => {
+      if (theme.name === 'dark') {
+        return `-webkit-filter: invert(1);
+        filter: invert(1);`
+      }
+    }};
   }
 `

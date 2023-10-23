@@ -15,7 +15,6 @@ function ContactMe () {
           </a>
         ))}
       </ContactMeContent>
-
     </ContactMeWrapper>
   </SiteSection>
 }

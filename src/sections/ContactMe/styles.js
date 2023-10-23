@@ -37,6 +37,12 @@ export const ContactMeContent = styled.div`
   }
 
   img {
+    ${({ theme }) => {
+      if (theme.name === 'dark') {
+        return `-webkit-filter: invert(1);
+        filter: invert(1);`
+      }
+    }};
     @media (max-width: 773px) {
       width: 1.25rem;
     }
