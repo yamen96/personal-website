@@ -8,7 +8,10 @@ function AboutMe () {
     return (
         <Section id={"about me"}>
             <motion.div {...new Animator().withDelay(1.5).getProps()} className='MyImg'>
+                <span>
                     <img src={"me.png"} height={150} alt={"picture of me"}/>
+                    <img src={"me2.png"} height={150} alt={"picture of me"}/>
+                </span>
             </motion.div>
             <motion.p {...new Animator().withDelay(0.2).withDuration(1).getProps()} className="Intro">
                 Hi, my name is

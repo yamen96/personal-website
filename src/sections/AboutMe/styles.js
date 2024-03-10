@@ -26,6 +26,26 @@ export const Section = styled.div`
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
+        span {
+            position: relative;
+        }
+        img {
+            transition: opacity 300ms ease-in-out;
+        }
+        span img:first-child {
+            opacity: 1;
+        }
+        span img:last-child {
+            position: absolute;
+            left: 0px;
+            opacity: 0;
+        }
+        span:hover img:first-child {
+            opacity: 0;
+        }
+        span:hover img:last-child {
+            opacity: 1;
+        }
     }
 
     .Intro {

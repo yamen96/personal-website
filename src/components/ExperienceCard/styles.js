@@ -28,7 +28,7 @@ export const StyledCardHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
+  cursor: ${props => props.isExpandable ? "pointer" : "auto"};
   border-bottom: 2px  ${({ theme }) => theme.divider} ${props => props.isExpanded ? "solid" : "transparent"};
 `
 
@@ -73,10 +73,12 @@ export const DropdownContainer = styled.div`
   transition: all .2s ease-out;
   
   &:hover {
-    transform: translate(0, ${props => props.isExpanded ? "-5px" : "5px"});
+    transform: translate(0, ${({isExpanded, isExpandable}) => 
+      !isExpandable ? '0px' : isExpanded ? "-5px" : "5px"});
   }
 
   img {
+    opacity: ${props => props.isExpandable ? "1" : "0.3"};
     transform: scaleY(${props => props.isExpanded ? "-1" : "1"});
     ${({ theme }) => {
       if (theme.name === 'dark') {

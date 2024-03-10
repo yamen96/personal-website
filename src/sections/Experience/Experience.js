@@ -1,5 +1,13 @@
 export const workExperiences = [
   { 
+    positionTitle: "Software Engineer",
+    companyName: "Policy Reporter",
+    companyLink: "https://www.policyreporter.com/",
+    companyLogoPath: "company-logos/policyreporter1_logo.jpg",
+    startDate: "Dec 2023",
+    endDate: "PRESENT"
+  },
+  { 
     positionTitle: "Software Development Engineer",
     companyName: "Amazon Web Services",
     companyLink: "https://aws.amazon.com/",
@@ -13,7 +21,7 @@ export const workExperiences = [
       "Java", "AWS", "Git", "DynamoDB", "S3", "KMS"
     ],
     startDate: "Jun 2022",
-    endDate: "PRESENT"
+    endDate: "Jun 2023"
   },
   { 
     positionTitle: "Software Engineer",
